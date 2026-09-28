@@ -12,3 +12,5 @@ uploads/
 
 # (Optional) Ignore Mac system files if you ever share this with a Mac user
 .DS_Store
+# Python virtual environment
+venv/

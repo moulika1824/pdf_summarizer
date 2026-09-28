@@ -22,7 +22,7 @@ function App() {
     formData.append('file', file);
 
     try {
-      const response = await fetch('http://localhost:5000/api/upload', {
+      const response = await fetch('http://127.0.0.1:5000/api/upload', {
         method: 'POST',
         body: formData,
       });
@@ -45,7 +45,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/ask', {
+      const response = await fetch('http://127.0.0.1:5000/api/ask', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: newChat[newChat.length - 1].text }),
@@ -56,7 +56,7 @@ function App() {
       let imageUrl = null;
       if (data.image) {
         const filename = data.image.split('/').pop().split('\\').pop(); 
-        imageUrl = `http://localhost:5000/api/images/${filename}`;
+        imageUrl = `http://127.0.0.1:5000/api/images/${filename}`;
       }
 
       setChatHistory((prev) => [
